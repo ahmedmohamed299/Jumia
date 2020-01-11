@@ -1,6 +1,8 @@
 package com.example.jumiaandroidx;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -15,6 +17,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.example.jumiaandroidx.SignUp.RESULT_LOAD_IMAGE;
 
 public class EditAccount extends AppCompatActivity {
 
@@ -59,6 +63,12 @@ public class EditAccount extends AppCompatActivity {
         addPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+                Intent intent=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent,RESULT_LOAD_IMAGE);
+
+
                 Toast.makeText(EditAccount.this, "Photo added", Toast.LENGTH_SHORT).show();
             }
         });
