@@ -78,6 +78,7 @@
                     android:layout_height="110dp"/>
 
                 <ImageView
+                    android:id="@+id/addIcon"
                     android:layout_width="50dp"
                     android:layout_height="60dp"
                     android:layout_marginTop="150dp"
